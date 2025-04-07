@@ -10,17 +10,16 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 @Service
-public class DuplaSenaService implements LoteriaService {
+public class LotoFacilService implements LoteriaService {
     @Override
     public LoteriaModel sortear() {
         Map<String, Set<Integer>> resultado = new HashMap<>();
-        resultado.put("primeiroSorteio", GeradorNumerosMega.sortearNumerosAleatorios(6, 50));
-        resultado.put("segundoSorteio", GeradorNumerosMega.sortearNumerosAleatorios(6, 50));
+        resultado.put("numeros", GeradorNumerosMega.sortearNumerosAleatorios(15, 25));
         return new LoteriaModel(TipoLoteria.LOTOFACIL, resultado);
     }
 
     @Override
     public TipoLoteria getTipo() {
-        return TipoLoteria.DUPLASENA;
+        return TipoLoteria.LOTOFACIL;
     }
 }

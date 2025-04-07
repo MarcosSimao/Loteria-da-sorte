@@ -6,7 +6,8 @@ public enum TipoLoteria  {
     MILIONARIO(0),
     MEGA_SENA(1),
     QUINA(2),
-    LOTO(3),
+    LOTOMANIA(3),
+    LOTOFACIL(4),
     DUPLASENA(5);
 
     private final int codigo;
