@@ -1,0 +1,24 @@
+package com.api.loteria.model;
+
+
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import java.util.Map;
+import java.util.Set;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+public class LoteriaModel {
+    private TipoLoteria tipo;
+    private Map<String, Set<Integer>> resultado;
+
+
+
+}
