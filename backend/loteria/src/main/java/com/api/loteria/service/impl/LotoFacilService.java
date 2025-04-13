@@ -13,8 +13,8 @@ import java.util.Set;
 public class LotoFacilService implements LoteriaService {
     @Override
     public LoteriaModel sortear() {
-        Map<String, Set<Integer>> resultado = new HashMap<>();
-        resultado.put("numeros", GeradorNumerosMega.sortearNumerosAleatorios(15, 25));
+        Map<String, Set<Object>> resultado = new HashMap<>();
+        resultado.put("numeros", GeradorNumerosMega.simuladorGloboDaSorte(15, 25));
         return new LoteriaModel(TipoLoteria.LOTOFACIL, resultado);
     }
 

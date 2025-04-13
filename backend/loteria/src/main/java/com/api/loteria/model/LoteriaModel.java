@@ -9,6 +9,7 @@ import lombok.Setter;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 
 @AllArgsConstructor
@@ -17,7 +18,7 @@ import java.util.Set;
 @Setter
 public class LoteriaModel {
     private TipoLoteria tipo;
-    private Map<String, Set<Integer>> resultado;
+    private Map<String, Set<Object>> resultado;
 
 
 

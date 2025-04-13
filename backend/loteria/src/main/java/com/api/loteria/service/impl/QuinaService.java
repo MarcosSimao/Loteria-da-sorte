@@ -16,8 +16,8 @@ public class QuinaService  implements LoteriaService {
 
     @Override
     public LoteriaModel sortear() {
-        Map<String, Set<Integer>> resultado = new HashMap<>();
-        resultado.put("numeros", GeradorNumerosMega.sortearNumerosAleatorios(5, 80));
+        Map<String, Set<Object>> resultado = new HashMap<>();
+        resultado.put("numeros", GeradorNumerosMega.simuladorGloboDaSorte(5, 80));
         return new LoteriaModel(TipoLoteria.QUINA, resultado);
     }
 

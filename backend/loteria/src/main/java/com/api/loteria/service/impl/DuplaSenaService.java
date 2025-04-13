@@ -8,14 +8,15 @@ import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 @Service
 public class DuplaSenaService implements LoteriaService {
     @Override
     public LoteriaModel sortear() {
-        Map<String, Set<Integer>> resultado = new HashMap<>();
-        resultado.put("primeiroSorteio", GeradorNumerosMega.sortearNumerosAleatorios(6, 50));
-        resultado.put("segundoSorteio", GeradorNumerosMega.sortearNumerosAleatorios(6, 50));
+        Map<String, Set<Object>> resultado = new HashMap<>();
+        resultado.put("primeiroSorteio", GeradorNumerosMega.simuladorGloboDaSorte(6, 50));
+        resultado.put("segundoSorteio", GeradorNumerosMega.simuladorGloboDaSorte(6, 50));
         return new LoteriaModel(TipoLoteria.LOTOFACIL, resultado);
     }
 

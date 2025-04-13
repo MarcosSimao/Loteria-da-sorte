@@ -8,7 +8,8 @@ public enum TipoLoteria  {
     QUINA(2),
     LOTOMANIA(3),
     LOTOFACIL(4),
-    DUPLASENA(5);
+    DUPLASENA(5),
+    DIADASORTE(6);
 
     private final int codigo;
 

@@ -16,8 +16,8 @@ public class MegaSenaService implements LoteriaService {
 
     @Override
     public LoteriaModel sortear() {
-        Map<String, Set<Integer>> resultado = new HashMap<>();
-        resultado.put("numeros", GeradorNumerosMega.sortearNumerosAleatorios(6, 60));
+        Map<String, Set<Object>> resultado = new HashMap<>();
+        resultado.put("numeros", GeradorNumerosMega.simuladorGloboDaSorte(6, 60));
         return new LoteriaModel(TipoLoteria.MEGA_SENA, resultado);
     }
 

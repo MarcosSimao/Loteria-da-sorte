@@ -15,8 +15,8 @@ import java.util.Set;
 public class LotoManiaService implements LoteriaService {
     @Override
     public LoteriaModel sortear() {
-        Map<String, Set<Integer>> resultado = new HashMap<>();
-        resultado.put("numeros", GeradorNumerosMega.sortearNumerosAleatorios(50, 100));
+        Map<String, Set<Object>> resultado = new HashMap<>();
+        resultado.put("numeros", GeradorNumerosMega.gerarLotoManiaNumerosAleatorios(50, 100));
         return new LoteriaModel(TipoLoteria.LOTOMANIA, resultado);
     }
 
