@@ -16,14 +16,15 @@ public final class GeradorNumerosMega {
 
     public static List<Object> simuladorGloboDaSorte(int quantidade, int max) {
         List<Integer> bolinhas = new ArrayList<>();
-        List<Object> numerosSorteados = new ArrayList<>();
+        List<Integer> numerosSorteados = new ArrayList<>();
         for (int i = 1; i <= max; i++) bolinhas.add(i);
 
         for (int i = 0; i < quantidade; i++) {
             Collections.shuffle(bolinhas, random); // gira urna
             numerosSorteados.add(bolinhas.remove(0)); // pega a bolinha
         }
-        return numerosSorteados;
+        Collections.sort(numerosSorteados);
+        return new ArrayList<>(numerosSorteados);
     }
 
     public static List<Object> geradorDeMesAleatorio() {
@@ -37,12 +38,13 @@ public final class GeradorNumerosMega {
     }
 
     public static List<Object> geradorSuperSete(int quantidade, int max) {
-        List<Object> numerosSuperSete = new ArrayList<>();
+        List<Integer> numerosSuperSete = new ArrayList<>();
         for (int i = 1; i < quantidade; i++) {
             numerosSuperSete.add(globoDaSorteSuperSete(max));
         }
 
-        return numerosSuperSete;
+        Collections.sort(numerosSuperSete);
+        return new ArrayList<>(numerosSuperSete);
     }
 
     private static Integer globoDaSorteSuperSete(int max) {
