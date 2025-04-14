@@ -7,6 +7,7 @@ import com.api.loteria.ultil.GeradorNumerosMega;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -14,7 +15,7 @@ import java.util.Set;
 public class DiaDeSorteService implements LoteriaService {
     @Override
     public LoteriaModel sortear() {
-        Map<String, Set<Object>> resultado = new HashMap<>();
+        Map<String, List<Object>> resultado = new HashMap<>();
         resultado.put("numeros", GeradorNumerosMega.simuladorGloboDaSorte(7, 31));
         resultado.put("mes da sorte", GeradorNumerosMega.geradorDeMesAleatorio());
         return new LoteriaModel(TipoLoteria.DIADASORTE, resultado);

@@ -10,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
-import java.util.concurrent.ThreadLocalRandom;
 
 @RestController
 @RequestMapping("/sorteio")
@@ -22,8 +21,6 @@ public class LotericaController {
     @GetMapping("/{tipo}")
     public ResponseEntity<LoteriaModel> sortear(@PathVariable Integer tipo){
         log.info("Sorteio solicitado para código: {}",tipo);
-
-
             TipoLoteria tipoLoteria = TipoLoteria.fromCodigo(tipo);
             Optional<LoteriaService> loteriaService = loteriaFactory.getLoteriaService(tipoLoteria);
 

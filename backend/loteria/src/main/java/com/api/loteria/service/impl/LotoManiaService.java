@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -15,7 +16,7 @@ import java.util.Set;
 public class LotoManiaService implements LoteriaService {
     @Override
     public LoteriaModel sortear() {
-        Map<String, Set<Object>> resultado = new HashMap<>();
+        Map<String, List<Object>> resultado = new HashMap<>();
         resultado.put("numeros", GeradorNumerosMega.gerarLotoManiaNumerosAleatorios(50, 100));
         return new LoteriaModel(TipoLoteria.LOTOMANIA, resultado);
     }

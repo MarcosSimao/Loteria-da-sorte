@@ -9,28 +9,46 @@ public final class GeradorNumerosMega {
             "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
             "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
     );
+
     private GeradorNumerosMega() {
         throw new UnsupportedOperationException("Classe utilitária");
     }
-    public static Set<Object> simuladorGloboDaSorte(int quantidade, int max) {
-        List<Integer> bolinhas = new ArrayList<>();
-        for (int i = 1; i <= max; i++) bolinhas.add(i);
 
-        Set<Object> numerosSorteados = new LinkedHashSet<>();
+    public static List<Object> simuladorGloboDaSorte(int quantidade, int max) {
+        List<Integer> bolinhas = new ArrayList<>();
+        List<Object> numerosSorteados = new ArrayList<>();
+        for (int i = 1; i <= max; i++) bolinhas.add(i);
 
         for (int i = 0; i < quantidade; i++) {
             Collections.shuffle(bolinhas, random); // gira urna
             numerosSorteados.add(bolinhas.remove(0)); // pega a bolinha
         }
-        return new TreeSet<>(numerosSorteados);
+        return numerosSorteados;
     }
 
-    public static Set<Object> geradorDeMesAleatorio(){
-        return Collections.singleton(MESES.get(random.nextInt(MESES.size())));
+    public static List<Object> geradorDeMesAleatorio() {
+        return Collections.singletonList(Collections.singleton(MESES.get(random.nextInt(MESES.size()))));
     }
-    public static Set<Object> gerarLotoManiaNumerosAleatorios(int quantidade, int max){
+
+    public static List<Object> gerarLotoManiaNumerosAleatorios(int quantidade, int max) {
         return simuladorGloboDaSorte(50, 100).stream()
                 .map(n -> n.equals(100) ? "00" : n)
-                .collect(Collectors.toCollection(LinkedHashSet::new));
+                .collect(Collectors.toList());
+    }
+
+    public static List<Object> geradorSuperSete(int quantidade, int max) {
+        List<Object> numerosSuperSete = new ArrayList<>();
+        for (int i = 1; i < quantidade; i++) {
+            numerosSuperSete.add(globoDaSorteSuperSete(max));
+        }
+
+        return numerosSuperSete;
+    }
+
+    private static Integer globoDaSorteSuperSete(int max) {
+        List<Integer> bolinha = new ArrayList<>();
+        for (int i = 0; i < max; i++) bolinha.add(i);
+        Collections.shuffle(bolinha, random);
+        return bolinha.get(0);
     }
 }
