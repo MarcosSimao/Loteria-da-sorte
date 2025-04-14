@@ -16,7 +16,7 @@ public class SuperSeteServices implements LoteriaService {
     @Override
     public LoteriaModel sortear() {
         Map<String, List<Object>> resultado = new HashMap<>();
-        resultado.put("primeiroSorteio", GeradorNumerosMega.geradorSuperSete(7, 9));
+        resultado.put("numeros", GeradorNumerosMega.geradorSuperSete(7, 9));
         return new LoteriaModel(TipoLoteria.SUPERSETE, resultado);
     }
 
