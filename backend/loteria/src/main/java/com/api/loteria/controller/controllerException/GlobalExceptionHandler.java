@@ -11,6 +11,6 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<Object> handleIllegalArgument(IllegalArgumentException ex) {
-        return ResponseEntity.badRequest().body(ex.getMessage()); // ou construa um LoteriaModel de erro, se quiser
+        return ResponseEntity.badRequest().body(ex.getMessage());
     }
 }

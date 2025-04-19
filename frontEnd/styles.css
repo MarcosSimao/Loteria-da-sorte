@@ -33,9 +33,14 @@ h1 {
     border: none;
     border-radius: 5px;
 }
-.milionario { background-color: #ff9800; }
+.milionario { background-color: #0023eb; }
 .quina { background-color: #3f51b5; }
 .mega { background-color: #4caf50; }
+.duplaSena { background-color: #8B0000; }
+.lotofacil { background-color: #91268F; }
+.lotoMania {background-color: #E87722;}
+.diaSorte {background-color: #FFD700;}
+.superSete {background-color: #4c5e2b;}
 .btn:hover { opacity: 0.8;}
 .overlay {
     position: fixed;

@@ -1,12 +1,5 @@
 function chamarApi(tipo,cor) {
-    let url = '';
-    if (tipo === 'milionario') {
-        url = 'http://localhost:8080/sorteio/milionario';
-    } else if (tipo === 'quina') {
-        url = 'http://localhost:8080/sorteio/quina';
-    } else if (tipo === 'mega') {
-        url = 'http://localhost:8080/sorteio/mega';
-    }
+    let url = 'http://localhost:8080/sorteio/'+tipo;
 
     document.getElementById('overlay').style.display = 'flex';
     document.getElementById('numeros').innerHTML = '<p>Carregando...</p>';
@@ -24,7 +17,7 @@ function chamarApi(tipo,cor) {
             document.getElementById('numeros').innerHTML = '<p>Erro ao exibir números.</p>';
         }
 
-        if (tipo === 'milionario' && data.resultado.trevos && Array.isArray(data.resultado.trevos)) {
+        if (tipo === 0 && data.resultado.trevos && Array.isArray(data.resultado.trevos)) {
             document.getElementById('trevos').innerHTML = data.resultado.trevos
                 .map(num => `<div class='trevo'>🍀 ${num}</div>`)
                 .join('');

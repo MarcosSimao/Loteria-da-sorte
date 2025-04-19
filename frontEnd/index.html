@@ -9,9 +9,14 @@
 <body>
     <div class="container">
         <h1>Escolha sua Loteria</h1>
-        <button class="btn milionario" onclick="chamarApi('milionario', '#ff9800')">+Milionário</button>
-        <button class="btn quina" onclick="chamarApi('quina', '#3f51b5')">Quina da Sorte</button>
-        <button class="btn mega" onclick="chamarApi('mega', '#4caf50')">Mega Sena</button>
+        <button class="btn milionario" onclick="chamarApi(0, '#0023eb')">+Milionário</button>
+        <button class="btn quina" onclick="chamarApi(2, '#3f51b5')">Quina da Sorte</button>
+        <button class="btn mega" onclick="chamarApi(1, '#4caf50')">Mega Sena</button>
+        <button class="btn duplaSena" onclick="chamarApi(5, '#8B0000')">Dupla Sena</button>
+        <button class="btn lotofacil" onclick="chamarApi(4, '#91268F')">Loto Facil</button>
+        <button class="btn lotoMania" onclick="chamarApi(3, '#E87722')">Loto Mania</button>
+        <button class="btn diaSorte" onclick="chamarApi(6, '#FFD700')">Dia de Sorte</button>
+        <button class="btn superSete" onclick="chamarApi(7, '#4c5e2b')">Super sete</button>
     </div>
     
     <div class="overlay" id="overlay">
