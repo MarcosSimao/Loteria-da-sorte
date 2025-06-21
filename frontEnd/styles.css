@@ -63,20 +63,24 @@ h1 {
 }
 .numeros {
     display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 15px;
+    overflow-x: auto;
+    gap: 8px;
+    padding: 10px;
+    max-width: 100%;
+    flex-wrap: nowrap;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
 }
 .numero, .trevo {
-    width: 50px;
-    height: 50px;
+      min-width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-    font-size: 20px;
+    flex-shrink: 0;
     font-weight: bold;
-    border-radius: 50%;
 }
 .trevo {
     background: gold;
