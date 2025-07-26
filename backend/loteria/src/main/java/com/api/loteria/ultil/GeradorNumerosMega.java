@@ -39,7 +39,7 @@ public final class GeradorNumerosMega {
 
     public static List<Object> geradorSuperSete(int quantidade, int max) {
         List<Integer> numerosSuperSete = new ArrayList<>();
-        for (int i = 1; i < quantidade; i++) {
+        for (int i = 0; i < quantidade; i++) {
             numerosSuperSete.add(globoDaSorteSuperSete(max));
         }
 

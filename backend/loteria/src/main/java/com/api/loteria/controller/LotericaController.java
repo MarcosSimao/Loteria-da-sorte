@@ -22,9 +22,7 @@ public class LotericaController {
     public ResponseEntity<LoteriaModel> sortear(@PathVariable Integer tipo){
         log.info("Sorteio solicitado para código: {}",tipo);
             TipoLoteria tipoLoteria = TipoLoteria.fromCodigo(tipo);
-            Optional<LoteriaService> loteriaService = loteriaFactory.getLoteriaService(tipoLoteria);
-
-        return loteriaService
+        return loteriaFactory.getLoteriaService(tipoLoteria)
                 .map(service -> ResponseEntity.ok(service.sortear()))
                 .orElseThrow(() -> new IllegalArgumentException("Nenhum sorteio encontrado para este código"));
     }
